@@ -1,6 +1,6 @@
 package com.neumaticos.sandro.backend_tire_management.entities;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,8 +22,15 @@ public class Registry {
     private String note;
     private String provider;
     private Float deposit;
-    private Date date;
+    private Timestamp date;
+    private String person_order;
 
+    public String getPerson_order() {
+        return person_order;
+    }
+    public void setPerson_order(String person_order) {
+        this.person_order = person_order;
+    }
     public Long getId() {
         return id;
     }
@@ -78,10 +85,10 @@ public class Registry {
     public void setDeposit(Float deposit) {
         this.deposit = deposit;
     }
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
     

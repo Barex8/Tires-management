@@ -10,5 +10,9 @@ import com.neumaticos.sandro.backend_tire_management.entities.Registry;
 public interface RegistryService {
 
     List<Registry> findAll();
+    List<Registry> findByTireSize(String tireSize);
+    List<Registry> findBetweenDates(String date1, String date2);
 
+
+    Registry save (Registry registry);
 }
