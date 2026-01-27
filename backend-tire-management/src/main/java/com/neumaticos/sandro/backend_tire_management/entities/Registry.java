@@ -24,6 +24,7 @@ public class Registry {
     private Float deposit;
     private Timestamp date;
     private String person_order;
+    private Integer state; //0 open, 1 notified, 2 closed 
 
     public String getPerson_order() {
         return person_order;
@@ -90,6 +91,12 @@ public class Registry {
     }
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+    public Integer getState() {
+        return state;
+    }
+    public void setState(Integer state) {
+        this.state = state;
     }
     
 

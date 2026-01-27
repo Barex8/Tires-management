@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.neumaticos.sandro.backend_tire_management.entities.Registry;
 import com.neumaticos.sandro.backend_tire_management.services.*;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
@@ -34,10 +35,14 @@ public class RegistryController {
         return registryService.findByTireSize(tireSize);
     }
 
+    @PutMapping("/notified/{id}")
+    public Registry setRegistryNotifiedClient(@PathVariable Integer id){
+        return ResponseEntity.status(HttpStatus.CREATED).body(registryService.setRegistryNotifiedClient(id)).getBody();
+    }
+
     @PostMapping()
     public ResponseEntity<?> create(@RequestBody Registry registry) {
         //Falta validación
-
         return ResponseEntity.status(HttpStatus.CREATED).body(registryService.save(registry));
 
     }
