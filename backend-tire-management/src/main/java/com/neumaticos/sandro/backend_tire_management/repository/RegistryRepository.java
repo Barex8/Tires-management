@@ -21,4 +21,7 @@ public interface RegistryRepository extends CrudRepository<Registry, Long> {
     @Query("select r from Registry r where r.id = id")
     Registry setRegistryNotifiedClient(Long id);
 
+    @Query("SELECT r FROM Registry r ORDER BY CASE WHEN r.state IN (0, 1) THEN 0 ELSE 1 END, r.date DESC LIMIT 50 OFFSET 0 ")
+    List<Registry> findAllOrdered();
+
 }

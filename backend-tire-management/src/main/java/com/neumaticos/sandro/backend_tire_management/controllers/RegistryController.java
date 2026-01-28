@@ -27,7 +27,7 @@ public class RegistryController {
 
     @GetMapping
     public List<Registry> findAll(){
-        return registryService.findAll();
+        return registryService.findAllOrdered();
     }
 
     @GetMapping("/{tireSize}")

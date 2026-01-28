@@ -21,8 +21,8 @@ public class RegistryServiceImpl implements RegistryService {
     private RegistryRepository repository;
 
     @Transactional
-    public List<Registry> findAll() {
-        return (List<Registry>) repository.findAll();
+    public List<Registry> findAllOrdered() {
+        return (List<Registry>) repository.findAllOrdered();
     }
 
     @Transactional
